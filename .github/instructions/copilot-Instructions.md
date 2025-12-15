@@ -24,6 +24,56 @@
 - No separate config file - configure via CSS `@theme` directive
 - Reference: `.github/instructions/tailwind.instructions.md`
 
+## Design Guide
+
+### Current Theme: Cozy Coffee Shop
+The app uses a warm, inviting coffee shop aesthetic with rich browns, cream tones, and playful coffee-themed elements.
+
+#### Color Palette (defined in `src/index.css`)
+```css
+--color-espresso: #3E2723    /* Primary dark accent */
+--color-mocha: #5D4037        /* Headers and backgrounds */
+--color-caramel: #8D6E63      /* Borders and accents */
+--color-latte: #D7CCC8        /* Soft neutrals */
+--color-cream: #EFEBE9        /* Light backgrounds */
+--color-steam: #B0BEC5        /* Steam animation */
+--color-bingo: #D4A574        /* Win state highlight */
+```
+
+#### Typography
+- **Headings**: `Playfair Display` (serif) - Elegant, coffee shop signage style
+- **Body**: `Quicksand` (sans-serif) - Warm, friendly, readable
+- Fonts loaded in `index.html` via Google Fonts
+
+#### Visual Elements & Patterns
+- **Coffee-stained texture**: `.coffee-texture` class adds subtle circular stain overlays
+- **Wood grain background**: `.wood-grain` class creates textured surface for game area
+- **Steam animation**: Used in BingoModal for celebratory effect
+- **Coffee cup icons** (☕): Used for decoration and bullet points
+- **Rounded corners**: Consistent use of `rounded-lg`, `rounded-xl`, `rounded-2xl`
+- **Layered shadows**: `shadow-sm`, `shadow-lg`, `shadow-2xl` for depth
+
+#### Component Styling
+- **StartScreen**: Chalkboard/menu board aesthetic with decorative coffee beans
+- **BingoSquare**: Coffee-stained paper cards with stamp effect when marked
+- **BingoModal**: Coffee cup celebration with animated steam
+- **GameScreen**: Vintage café signage header with wood grain background
+- **BingoBoard**: Light cream container with generous spacing
+
+#### Design Principles
+- **Warmth over corporate**: Use browns/creams instead of grays/blues
+- **Playful details**: Coffee rings, steam, decorative elements
+- **Tactile feel**: Textured backgrounds, layered shadows, paper-like cards
+- **Consistent theming**: Coffee references throughout (e.g., "Brew Your Game", "Keep Sipping")
+
+#### Extending the Theme
+When adding new components or features:
+1. Use color variables from `@theme` in `src/index.css`
+2. Apply `.coffee-texture` to paper-like elements
+3. Use coffee emoji (☕) for decorative touches
+4. Maintain Playfair Display for headings, Quicksand for body text
+5. Keep rounded corners and warm shadows consistent
+
 ## Key Workflows
 
 ### Adding New Questions
@@ -51,3 +101,4 @@ This project is designed for experimentation with new modes (see `.lab/GUIDE.md`
 - Vite base path is `/bingo-game/` for GitHub Pages (see `vite.config.ts`)
 - React 19 is used - ensure compatibility when adding dependencies
 - Tailwind v4 syntax differs from v3 - check instructions file before adding utility classes
+- **Font loading**: Use `<link>` tags in `index.html` for external fonts, not CSS `@import` (causes issues with Tailwind 4)
