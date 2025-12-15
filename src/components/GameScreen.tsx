@@ -17,33 +17,35 @@ export function GameScreen({
   onReset,
 }: GameScreenProps) {
   return (
-    <div className="flex flex-col min-h-full bg-gray-50">
-      {/* Header */}
-      <header className="flex items-center justify-between p-3 bg-white border-b border-gray-200">
+    <div className="flex flex-col min-h-full wood-grain">
+      {/* Header - Café signage style */}
+      <header className="flex items-center justify-between p-4 border-b-2 border-espresso relative" style={{ backgroundColor: '#5D4037' }}>
         <button
           onClick={onReset}
-          className="text-gray-500 text-sm px-3 py-1.5 rounded active:bg-gray-100"
+          className="text-cream font-semibold px-4 py-2 rounded-md transition-all active:bg-espresso"
         >
           ← Back
         </button>
-        <h1 className="font-bold text-gray-900">Soc Ops</h1>
-        <div className="w-16"></div>
+        <h1 className="font-bold text-cream text-xl" style={{ fontFamily: 'var(--font-heading)' }}>
+          Soc Ops
+        </h1>
+        <div className="w-20"></div>
       </header>
 
-      {/* Instructions */}
-      <p className="text-center text-gray-500 text-sm py-2 px-4">
-        Tap a square when you find someone who matches it.
+      {/* Instructions with coffee theme */}
+      <p className="text-center text-cream text-sm py-3 px-4 font-medium" style={{ backgroundColor: 'rgba(93, 64, 55, 0.8)' }}>
+        ☕ Tap a square when you find someone who matches it.
       </p>
 
-      {/* Bingo indicator */}
+      {/* Bingo indicator - coffee celebration */}
       {hasBingo && (
-        <div className="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm">
-          🎉 BINGO! You got a line!
+        <div className="bg-bingo text-espresso text-center py-3 font-bold border-y-2 border-caramel shadow-inner" style={{ fontFamily: 'var(--font-heading)' }}>
+          ☕ BINGO! You brewed a perfect line! ☕
         </div>
       )}
 
-      {/* Board */}
-      <div className="flex-1 flex items-center justify-center p-3">
+      {/* Board with cozy background */}
+      <div className="flex-1 flex items-center justify-center p-4" style={{ backgroundColor: 'rgba(141, 110, 99, 0.3)' }}>
         <BingoBoard
           board={board}
           winningSquareIds={winningSquareIds}
