@@ -88,10 +88,10 @@ Want to use different prompts? Edit the questions in `src/data/questions.ts` to 
 
 ```typescript
 // Example: Add your own prompts
-export const QUESTIONS = [
-  "Has worked remotely from another country",
-  "Can solve a Rubik's cube",
-  "Has met a celebrity",
+export const questions: string[] = [
+  "has worked remotely from another country",
+  "can solve a Rubik's cube",
+  "has met a celebrity",
   // Add more...
 ];
 ```
