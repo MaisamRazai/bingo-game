@@ -118,7 +118,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-Created by [Harald Kirschner](https://github.com/MaisamRazai) to make social events more fun and interactive.
+Originally created by Harald Kirschner. Maintained by [Maisam Razai](https://github.com/MaisamRazai) to make social events more fun and interactive.
 
 ---
 
