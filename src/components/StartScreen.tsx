@@ -135,7 +135,10 @@ export function StartScreen({ onStart }: StartScreenProps) {
                 {/* Checkmark or coffee stain for marked squares */}
                 {square.isMarked && (
                   <>
-                    <span className="absolute top-1 right-1 text-caramel text-lg font-bold animate-in fade-in zoom-in duration-300">
+                    <span 
+                      className="absolute top-1 right-1 text-caramel text-lg font-bold transition-opacity duration-300"
+                      style={{ animation: 'fadeIn 0.3s ease-in-out' }}
+                    >
                       ✓
                     </span>
                     {/* Coffee ring overlay */}
@@ -155,8 +158,11 @@ export function StartScreen({ onStart }: StartScreenProps) {
           {/* Educational tooltip after 3 taps */}
           {markedCount >= 3 && markedCount < 6 && !showEncouragement && (
             <div 
-              className="mt-3 bg-caramel text-cream px-4 py-2 rounded-lg shadow-md text-sm font-medium animate-in fade-in slide-in-from-bottom-2 duration-500"
-              style={{ fontFamily: 'var(--font-body)' }}
+              className="mt-3 bg-caramel text-cream px-4 py-2 rounded-lg shadow-md text-sm font-medium transition-all duration-500"
+              style={{ 
+                fontFamily: 'var(--font-body)',
+                animation: 'slideInFromBottom 0.5s ease-out'
+              }}
             >
               In the real game, find people who match! 🎯
             </div>
@@ -165,7 +171,10 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
         {/* Section 3: Transition to Full Game */}
         {showEncouragement && (
-          <div className="animate-in fade-in slide-in-from-bottom-3 duration-500 mb-6">
+          <div 
+            className="mb-6 transition-all duration-500"
+            style={{ animation: 'slideInFromBottom 0.5s ease-out' }}
+          >
             <p className="text-2xl font-bold text-bingo mb-4" style={{ fontFamily: 'var(--font-heading)', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
               {checkThreeInRow(demoSquares) ? '🎉 Bingo! You\'ve got it!' : 'You\'ve got it!'}
             </p>
