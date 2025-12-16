@@ -72,3 +72,25 @@ body {
 .steam:nth-child(3) {
   animation-delay: 1s;
 }
+
+/* Fade in animation for demo squares */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide in from bottom animation */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
