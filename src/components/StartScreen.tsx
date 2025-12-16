@@ -4,57 +4,42 @@ interface StartScreenProps {
 
 export function StartScreen({ onStart }: StartScreenProps) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-full p-6 relative overflow-hidden" style={{ backgroundColor: '#5D4037' }}>
-      {/* Coffee beans decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 text-6xl">☕</div>
-        <div className="absolute bottom-20 right-10 text-5xl">☕</div>
-        <div className="absolute top-1/3 right-1/4 text-4xl">☕</div>
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-full p-6 relative overflow-hidden coffee-texture" style={{ backgroundColor: '#EFEBE9' }}>
+      {/* Subtle coffee stain pattern background - low opacity */}
+      <div className="absolute inset-0 opacity-5 wood-grain"></div>
       
-      <div className="text-center max-w-sm relative z-10">
-        {/* Title with coffee shop signage style */}
-        <div className="mb-8">
-          <h1 className="text-6xl font-bold mb-2" style={{ fontFamily: 'var(--font-heading)', color: '#EFEBE9', textShadow: '3px 3px 6px rgba(0,0,0,0.3)' }}>
-            Soc Ops
-          </h1>
-          <div className="flex items-center justify-center gap-2">
-            <div className="h-px bg-latte w-12"></div>
-            <p className="text-xl" style={{ fontFamily: 'var(--font-heading)', color: '#D7CCC8', fontStyle: 'italic' }}>
-              Social Bingo
-            </p>
-            <div className="h-px bg-latte w-12"></div>
+      <div className="text-center max-w-[600px] relative z-10 flex flex-col items-center gap-8">
+        {/* Hero coffee cup with steam animation */}
+        <div className="relative">
+          <div className="text-[8rem] sm:text-[10rem]" role="img" aria-label="Coffee cup">☕</div>
+          {/* Steam wisps */}
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 flex gap-3">
+            <div className="steam text-steam text-2xl">~</div>
+            <div className="steam text-steam text-2xl">~</div>
+            <div className="steam text-steam text-2xl">~</div>
           </div>
         </div>
         
-        {/* Menu board style instructions */}
-        <div className="bg-cream rounded-lg p-6 shadow-2xl border-4 border-caramel mb-8 coffee-texture relative">
-          {/* Coffee ring stain decoration */}
-          <div className="absolute -top-3 -right-3 w-16 h-16 border-4 border-caramel/20 rounded-full"></div>
-          
-          <h2 className="font-bold text-espresso mb-4 text-lg" style={{ fontFamily: 'var(--font-heading)' }}>
-            How to Play
-          </h2>
-          <ul className="text-left text-mocha space-y-2.5 font-medium">
-            <li className="flex items-start gap-2">
-              <span className="text-caramel mt-0.5">☕</span>
-              <span>Find people who match the questions</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-caramel mt-0.5">☕</span>
-              <span>Tap a square when you find a match</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-caramel mt-0.5">☕</span>
-              <span>Get 5 in a row to win!</span>
-            </li>
-          </ul>
-        </div>
+        {/* Hero headline */}
+        <h1 
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold leading-tight text-espresso mb-4" 
+          style={{ fontFamily: 'var(--font-heading)' }}
+        >
+          Break the Ice, One Square at a Time
+        </h1>
+        
+        {/* Compelling subtitle */}
+        <p 
+          className="text-xl sm:text-2xl text-mocha mb-8 max-w-md" 
+          style={{ fontFamily: 'var(--font-body)' }}
+        >
+          Transform awkward small talk into an engaging game
+        </p>
 
-        {/* Start button */}
+        {/* Prominent CTA button - 2x larger */}
         <button
           onClick={onStart}
-          className="w-full text-cream font-bold py-4 px-8 rounded-lg text-lg shadow-xl transition-all active:scale-95"
+          className="text-cream font-bold py-6 px-16 rounded-lg text-2xl shadow-2xl transition-all hover:scale-105 hover:shadow-[0_20px_50px_rgba(62,39,35,0.4)] active:scale-95 min-h-[44px]"
           style={{ 
             backgroundColor: '#3E2723',
             fontFamily: 'var(--font-heading)',
